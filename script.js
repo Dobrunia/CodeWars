@@ -19,3 +19,9 @@ class Cat extends Animal {
     return this.name + ' meows.';
   }
 }
+
+//Unexpected parsing
+function getStatus(isBusy) {
+  var msg = isBusy ? "busy" : "available";
+  return { status: msg };
+}
