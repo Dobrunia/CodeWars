@@ -82,3 +82,30 @@ String.prototype.toJadenCase = function () {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }).join(' ');
 };
+
+//Best travel
+function chooseBestSum(t, k, ls) {
+  const combinations = getCombinations(ls, k);
+  let maxSum = -1;
+  for (const combination of combinations) {
+    const sum = combination.reduce((acc, val) => acc + val, 0);
+    if (sum <= t && sum > maxSum) {
+      maxSum = sum;
+    }
+  }
+  return maxSum === -1 ? null : maxSum;
+}
+
+function getCombinations(arr, k) {
+  if (k === 1) {
+    return arr.map((val) => [val]);
+  }
+  const result = [];
+  for (let i = 0; i < arr.length - k + 1; i++) {
+    const subCombinations = getCombinations(arr.slice(i + 1), k - 1);
+    for (const subCombination of subCombinations) {
+      result.push([arr[i], ...subCombination]);
+    }
+  }
+  return result;
+}
