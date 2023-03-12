@@ -48,4 +48,37 @@ function sumTwoSmallestNumbers(numbers) {
     return pupupu[0] + pupupu[1];
   }
 
-//
+//Find the next perfect square!
+function findNextSquare(sq) {
+  const sqrt = Math.sqrt(sq);
+  
+  if (sqrt % 1 !== 0) {
+    return -1;
+  }
+
+  const nextSqrt = sqrt + 1;
+  return nextSqrt * nextSqrt;
+}
+
+//Printer Errors
+function printerError(s) {
+  let count = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i].charCodeAt() > 109 || s[i].charCodeAt() < 97) {
+      count++;
+    }
+  }
+  return count + "/" + s.length;
+}
+
+//Disemvowel Trolls
+function disemvowel(str) {
+  return str.replace(/[aeiou]/gi, '');
+}
+
+//Jaden Casing Strings
+String.prototype.toJadenCase = function () {
+  return this.split(' ').map(function (word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }).join(' ');
+};
