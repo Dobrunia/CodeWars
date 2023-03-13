@@ -109,3 +109,12 @@ function getCombinations(arr, k) {
   }
   return result;
 }
+
+
+//Chuck Norris VII - True or False? (Beginner)
+function ifChuckSaysSo(){
+  return  !1;
+}
+
+
+//Determine offspring sex based on genes XX and XY chromosomes
