@@ -118,3 +118,15 @@ function ifChuckSaysSo(){
 
 
 //Determine offspring sex based on genes XX and XY chromosomes
+function chromosomeCheck(sperm) {
+  if(sperm === 'XX') {
+    return "Congratulations! You're going to have a daughter.";
+  } else {
+    return "Congratulations! You're going to have a son.";
+  }
+}
+
+//ES6 string addition
+function joinStrings(string1, string2){
+  return `${string1} ${string2}`;
+}
