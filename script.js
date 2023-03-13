@@ -142,4 +142,18 @@ function countSheeps(arrayOfSheep) {
   return count;
 }
 
+//Function 1 - hello world
+function greet() {
+  return "hello world!";
+}
+
+//Is n divisible by x and y?
+function isDivisible(n, x, y) {
+  if (n % x == 0 && n % y == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 //
