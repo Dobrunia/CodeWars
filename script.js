@@ -1,6 +1,5 @@
 //String repeat
-function repeatStr (n, s) {
-
+function repeatStr(n, s) {
   let result = "";
   for (let i = 0; i < n; i++) {
     result += s;
@@ -8,15 +7,14 @@ function repeatStr (n, s) {
   return result;
 }
 
-
 //Classy Extentions
 class Cat extends Animal {
   constructor(name) {
     super(name);
   }
-  
+
   speak() {
-    return this.name + ' meows.';
+    return this.name + " meows.";
   }
 }
 
@@ -28,30 +26,29 @@ function getStatus(isBusy) {
 
 //Sum of two lowest positive integers
 function sumTwoSmallestNumbers(numbers) {
-
   function selectionSort(array) {
-      for (let i = 0; i < array.length; i++) {
-          let indexMin = i
-          for (let j = i+1; j < array.length; j++) {
-              if (array[j] < array[indexMin]) {
-                  indexMin = j
-              }
-          }
-          let tmp = array[i]
-          array[i] = array[indexMin]
-          array[indexMin] = tmp
+    for (let i = 0; i < array.length; i++) {
+      let indexMin = i;
+      for (let j = i + 1; j < array.length; j++) {
+        if (array[j] < array[indexMin]) {
+          indexMin = j;
+        }
       }
-      return array
+      let tmp = array[i];
+      array[i] = array[indexMin];
+      array[indexMin] = tmp;
+    }
+    return array;
   }
   let pupupu = selectionSort(numbers);
-    
-    return pupupu[0] + pupupu[1];
-  }
+
+  return pupupu[0] + pupupu[1];
+}
 
 //Find the next perfect square!
 function findNextSquare(sq) {
   const sqrt = Math.sqrt(sq);
-  
+
   if (sqrt % 1 !== 0) {
     return -1;
   }
@@ -73,14 +70,16 @@ function printerError(s) {
 
 //Disemvowel Trolls
 function disemvowel(str) {
-  return str.replace(/[aeiou]/gi, '');
+  return str.replace(/[aeiou]/gi, "");
 }
 
 //Jaden Casing Strings
 String.prototype.toJadenCase = function () {
-  return this.split(' ').map(function (word) {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  }).join(' ');
+  return this.split(" ")
+    .map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
 };
 
 //Best travel
@@ -110,16 +109,14 @@ function getCombinations(arr, k) {
   return result;
 }
 
-
 //Chuck Norris VII - True or False? (Beginner)
-function ifChuckSaysSo(){
-  return  !1;
+function ifChuckSaysSo() {
+  return !1;
 }
-
 
 //Determine offspring sex based on genes XX and XY chromosomes
 function chromosomeCheck(sperm) {
-  if(sperm === 'XX') {
+  if (sperm === "XX") {
     return "Congratulations! You're going to have a daughter.";
   } else {
     return "Congratulations! You're going to have a son.";
@@ -127,7 +124,7 @@ function chromosomeCheck(sperm) {
 }
 
 //ES6 string addition
-function joinStrings(string1, string2){
+function joinStrings(string1, string2) {
   return `${string1} ${string2}`;
 }
 
@@ -156,4 +153,22 @@ function isDivisible(n, x, y) {
   }
 }
 
-//
+//Trimming a string
+function trim(str, size) {
+  if (str.length <= size) {
+    return str;
+  }
+  if (size <= 3) {
+    return str.substring(0, size) + "...";
+  }
+  return str.substring(0, size - 3) + "...";
+}
+
+//Credit Card Mask
+function maskify(cc) {
+  if (cc.length <= 4) {
+    return cc;
+  }
+  let d = cc.substring(0, cc.length - 4);
+  return d.replace(/./g, "#") + cc.substring(cc.length - 4);
+}
